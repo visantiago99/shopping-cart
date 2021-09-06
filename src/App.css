@@ -8,11 +8,19 @@ li {
 
 a {
   text-decoration: none;
-  color: red;
+  color: rgb(52, 131, 250)
 }
 
 input {
   background-color: #fff;
+}
+
+button {
+  background-color: rgb(52, 131, 250);
+  border-radius: 2px;
+  color: #fff;
+  border-color: transparent;
+  margin-bottom: 5px;
 }
 
 .header {
@@ -24,10 +32,23 @@ input {
   top: 0;
   margin-bottom: 30px;
   position: fixed;
+  display: flex;
+  justify-content: space-around;
 }
 
 .header a {
   color: #3a3a3a;
+}
+
+.header p {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .home-container {
@@ -74,5 +95,8 @@ input {
 }
 
 .cart-item-card {
-  width: 300px;
+  border: 2px solid #3a3a3a;
+  max-width: 300px;
+  margin-bottom: 20px;
+  border-radius: 10%;
 }
