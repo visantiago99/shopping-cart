@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -19,6 +23,15 @@ a {
 
 .header a {
   color: aliceblue;
+}
+
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px;
 }
 
 .p-list-container {

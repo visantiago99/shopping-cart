@@ -11,7 +11,7 @@ function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory}) {
   });
   
   return (
-    <div>
+    <div className="home-container">
       Search for a specific item:
       <input type="text" name="search" onChange={(e) => setInput({ searchInput: e.target.value })} />
       <Link to="/productsList">
