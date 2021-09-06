@@ -8,10 +8,10 @@ function CartList({cartStore, removeFromCart}) {
   const totalValue = priceMap && priceMap.reduce((acc, curr) => acc + curr, 0)
   console.log(totalValue)
   return (
-    <div>
+    <div className="cart-list-contianer">
       <Link to="/">Search more products</Link>
       {cartStore && cartStore.map((p, i) => {
-        return <div key={i}>
+        return <div key={i} className="cart-item-card">
           <li>{
             <div>
               <img src={p.thumbnail} alt={p.title} />

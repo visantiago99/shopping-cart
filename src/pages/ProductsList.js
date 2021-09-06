@@ -5,10 +5,10 @@ import {addToCart} from '../actions/mercadoActions';
 
 function ProductsList({productsInput, addToCart}) {
   return (
-    <div>
+    <div className="p-list-container">
       <Link to="/">Back</Link>
       {productsInput && productsInput.results.map((p, i) => {
-        return <div key={i}>{
+        return <div key={i} className="p-card">{
           <Link to={`/productDetails/${p.id}`}>
             <p>{p.title}</p>
             <p>{p.price}</p>

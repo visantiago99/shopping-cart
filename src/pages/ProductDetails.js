@@ -8,7 +8,7 @@ function ProductDetails({products, addToCart}) {
   const productFiltered = products && products.results.find((p) => p.id === id)
   
   return (
-    <div>
+    <div className="p-detail-container">
       <Link to="/productsList">Back</Link>
       <p>{productFiltered.title}</p>
       <img src={productFiltered.thumbnail} alt="p img" width="300px" />
