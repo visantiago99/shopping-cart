@@ -1,3 +1,11 @@
+export const toogleSearch = () => ({
+  type: 'TGG_SEARCH',
+});
+
+export const toogleCategories = () => ({
+  type: 'TGG_CATEGORY',
+});
+
 export const requestSucess = (payload) => ({
   type: 'REQUEST_SUCESS',
   payload,
