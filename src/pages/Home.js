@@ -8,7 +8,7 @@ function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory}) {
 
   useEffect(() => {
     fetchMercado();
-  }, []);
+  });
   
   return (
     <div>

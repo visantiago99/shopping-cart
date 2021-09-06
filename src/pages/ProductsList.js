@@ -9,12 +9,10 @@ function ProductsList({productsInput, addToCart}) {
       {productsInput && productsInput.results.map((p, i) => {
         return <div key={i}>{
           <Link to={`/productDetails/${p.id}`}>
-          <div>
             <p>{p.title}</p>
             <p>{p.price}</p>
             <img src={p.thumbnail} alt="p img" width="200px" />
             <br />
-          </div>
             <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
           </Link>
         }</div>
