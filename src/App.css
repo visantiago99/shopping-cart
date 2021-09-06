@@ -8,21 +8,26 @@ li {
 
 a {
   text-decoration: none;
+  color: red;
+}
+
+input {
+  background-color: #fff;
 }
 
 .header {
-  background-color: #2a2a2a;
-  border: 2px solid #fff;
+  background-color: rgb(255, 241, 89);
+  border: 2px solid #1a1a1a;
   border-radius: 5px;
   max-width: 1200px;
-  width: 100%;
+  width: 99%;
   top: 0;
   margin-bottom: 30px;
   position: fixed;
 }
 
 .header a {
-  color: aliceblue;
+  color: #3a3a3a;
 }
 
 .home-container {
@@ -47,6 +52,7 @@ a {
   border: 2px solid #3a3a3a;
   max-width: 300px;
   margin-bottom: 20px;
+  border-radius: 10%;
 }
 
 .p-detail-container {

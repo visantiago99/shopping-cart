@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import {addToCart} from '../actions/mercadoActions';
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 function ProductDetails({products, addToCart}) {
   const {id} = useParams();
@@ -9,7 +10,7 @@ function ProductDetails({products, addToCart}) {
   
   return (
     <div className="p-detail-container">
-      <Link to="/productsList">Back</Link>
+      <Link to="/productsList"><IoArrowBackCircleOutline /></Link>
       <p>{productFiltered.title}</p>
       <img src={productFiltered.thumbnail} alt="p img" width="300px" />
       <p>{`R$ ${productFiltered.price}`}</p>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {RemvFromCart} from '../actions/mercadoActions';
+import { IoTrash, IoSearchSharp } from "react-icons/io5";
 
 function CartList({cartStore, removeFromCart}) {
   const priceMap = cartStore && cartStore.map((p) => p.price)
@@ -9,7 +10,7 @@ function CartList({cartStore, removeFromCart}) {
   console.log(totalValue)
   return (
     <div className="cart-list-contianer">
-      <Link to="/">Search more products</Link>
+      <Link to="/"><button type="button">Keep searching <IoSearchSharp /></button></Link>
       {cartStore && cartStore.map((p, i) => {
         return <div key={i} className="cart-item-card">
           <li>{
@@ -17,7 +18,7 @@ function CartList({cartStore, removeFromCart}) {
               <img src={p.thumbnail} alt={p.title} />
               <p>{p.title}</p>
               <p>{`R$ ${p.price}`}</p>
-              <button type="button" onClick={() => removeFromCart(p.id)}>X</button>
+              <button type="button" onClick={() => removeFromCart(p.id)}><IoTrash /></button>
             </div>
           }</li>
         </div>
