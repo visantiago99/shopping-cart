@@ -6,6 +6,7 @@ import {addToCart} from '../actions/mercadoActions';
 function ProductsList({productsInput, addToCart}) {
   return (
     <div>
+      <Link to="/">Back</Link>
       {productsInput && productsInput.results.map((p, i) => {
         return <div key={i}>{
           <Link to={`/productDetails/${p.id}`}>

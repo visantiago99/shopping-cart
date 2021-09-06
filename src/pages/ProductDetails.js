@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {addToCart} from '../actions/mercadoActions';
 
 function ProductDetails({products, addToCart}) {
@@ -9,6 +9,7 @@ function ProductDetails({products, addToCart}) {
   
   return (
     <div>
+      <Link to="/productsList">Back</Link>
       <p>{productFiltered.title}</p>
       <img src={productFiltered.thumbnail} alt="p img" width="300px" />
       <p>{`R$ ${productFiltered.price}`}</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {RemvFromCart} from '../actions/mercadoActions';
 
 function CartList({cartStore, removeFromCart}) {
@@ -8,6 +9,7 @@ function CartList({cartStore, removeFromCart}) {
   console.log(totalValue)
   return (
     <div>
+      <Link to="/">Search more products</Link>
       {cartStore && cartStore.map((p, i) => {
         return <div key={i}>
           <li>{
