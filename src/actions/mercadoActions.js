@@ -28,3 +28,13 @@ export const requestPcategory = (payload) => ({
 export const fetchProductsCategory = (id) => (dispatch) => fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${id}`)
   .then((result) => result.json())
   .then((resJson) => dispatch(requestPcategory(resJson)))
+
+export const addToCart = (payload) => ({
+  type: 'ADD_CART',
+  payload,
+});
+
+export const RemvFromCart = (payload) => ({
+  type: 'REM_CART',
+  payload,
+});

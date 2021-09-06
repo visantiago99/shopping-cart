@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   categories: '',
   products: '',
+  cartList: [],
 }
 
 export default function mercadoReducer(state = INITIAL_STATE, action) {
@@ -19,6 +20,16 @@ export default function mercadoReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         products: action.payload,
+      }
+    case 'ADD_CART':
+      return {
+        ...state,
+        cartList: [...state.cartList, action.payload]
+      }
+    case 'REM_CART':
+      return {
+        ...state,
+        cartList: [...state.cartList.filter((p) => p.id !== action.payload)]
       }
     default:
       return state;

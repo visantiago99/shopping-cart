@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {addToCart} from '../actions/mercadoActions';
 
-function ProductsList({productsInput}) {
+function ProductsList({productsInput, addToCart}) {
   return (
     <div>
       {productsInput && productsInput.results.map((p, i) => {
@@ -12,8 +13,9 @@ function ProductsList({productsInput}) {
             <p>{p.title}</p>
             <p>{p.price}</p>
             <img src={p.thumbnail} alt="p img" width="200px" />
-            <button type="button">Adicionar ao carrinho</button>
+            <br />
           </div>
+            <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
           </Link>
         }</div>
       })}
@@ -25,4 +27,8 @@ const mapStateToProps = (state) => ({
   productsInput: state.mercadoReducer.products
 });
 
-export default connect(mapStateToProps)(ProductsList)
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: (state) => dispatch(addToCart(state)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList)
