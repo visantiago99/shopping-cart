@@ -1,7 +1,6 @@
 const INITIAL_STATE = {
   categories: '',
-  productsInput: '',
-  productsCat: '',
+  products: '',
 }
 
 export default function mercadoReducer(state = INITIAL_STATE, action) {
@@ -14,12 +13,12 @@ export default function mercadoReducer(state = INITIAL_STATE, action) {
     case 'REQUEST_INPUT':
       return {
         ...state,
-        productsInput: action.payload,
+        products: action.payload,
       }
     case 'REQUEST_PCATEGORY':
       return {
         ...state,
-        productsCat: action.payload,
+        products: action.payload,
       }
     default:
       return state;

@@ -1,16 +1,18 @@
 import {Switch, Route} from 'react-router-dom';
 import './App.css';
+import CartList from './pages/CartList';
 import Home from './pages/Home';
-import ProductsCategory from './pages/ProductsCategory';
-import ProductsInput from './pages/ProductsInput';
+import ProductDetails from './pages/ProductDetails';
+import ProductsList from './pages/ProductsList';
 
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" render={() => <Home />} />
-        <Route path="/productInput" render={() => <ProductsInput />} />
-        <Route path="/productCategory" render={() => <ProductsCategory />} />
+        <Route path="/productsList" render={() => <ProductsList />} />
+        <Route path="/productDetails/:id" render={(props) => <ProductDetails {...props} />} />
+        <Route path="/cart" render={() => <CartList />} />
       </Switch>
     </div>
   );

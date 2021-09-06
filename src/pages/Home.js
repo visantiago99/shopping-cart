@@ -14,7 +14,7 @@ function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory}) {
     <div>
       Search for a specific item:
       <input type="text" name="search" onChange={(e) => setInput({ searchInput: e.target.value })} />
-      <Link to="/productInput">
+      <Link to="/productsList">
       <button type="button" onClick={() => {
         fetchProductbCat(inputSearch.searchInput)}}>
         search
@@ -23,7 +23,7 @@ function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory}) {
       <br />
       Or select one categorie below:
       {categoriesMap && categoriesMap.map((cat, i) => {
-       return <Link to="/productCategory">
+       return <Link to="/productsList">
        <li key={i} onClick={() => fetchPcategory(cat.id)}>{cat.name}</li>
        </Link>
       })}
