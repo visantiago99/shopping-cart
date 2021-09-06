@@ -36,12 +36,14 @@ export default function mercadoReducer(state = INITIAL_STATE, action) {
     case 'TGG_SEARCH':
       return {
         ...state,
-        toggle: !state.toggle
+        toggle: !state.toggle,
+        tggCategories: false,
       }
     case 'TGG_CATEGORY':
       return {
         ...state,
-        tggCategories: !state.tggCategories
+        tggCategories: !state.tggCategories,
+        toggle: false,
       }
     default:
       return state;
