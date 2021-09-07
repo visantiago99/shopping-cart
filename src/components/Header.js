@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineSearch, AiOutlineUnorderedList } from "react-icons/ai";
 import { GrHome } from "react-icons/gr";
 import { connect } from 'react-redux';
-import {toogleSearch, toogleCategories} from '../actions/mercadoActions';
+import {toogleSearch, toogleCategories, toogleOff} from '../actions/mercadoActions';
 
-function Header({cartList, toggleSearchBar, toogleCategories}) {
+function Header({cartList, toggleSearchBar, toogleCategories, tggleOff}) {
   return (
     <div className="header">
-      <div>
+      <div onClick={tggleOff}>
       <Link to="/"><GrHome /></Link>
       </div>
       <div onClick={toggleSearchBar}>
@@ -18,7 +18,7 @@ function Header({cartList, toggleSearchBar, toogleCategories}) {
       </div>
       <div onClick={toogleCategories}>
         <Link to="/">
-        categories
+        <AiOutlineUnorderedList />
         </Link>
       </div>
       <div>
@@ -36,6 +36,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   toggleSearchBar: () => dispatch(toogleSearch()),
   toogleCategories: () => dispatch(toogleCategories()),
+  tggleOff: () => dispatch(toogleOff())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

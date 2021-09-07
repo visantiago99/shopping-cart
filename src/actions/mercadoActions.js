@@ -6,6 +6,10 @@ export const toogleCategories = () => ({
   type: 'TGG_CATEGORY',
 });
 
+export const toogleOff = () => ({
+  type: 'TGG_OFF',
+});
+
 export const requestSucess = (payload) => ({
   type: 'REQUEST_SUCESS',
   payload,
