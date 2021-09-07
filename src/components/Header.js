@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineShoppingCart, AiOutlineSearch, AiOutlineUnorderedList } from "react-icons/ai";
 import { GrHome } from "react-icons/gr";
 import { connect } from 'react-redux';
-import {toogleSearch, toogleCategories, toogleOff} from '../actions/mercadoActions';
+import {toogleSearch, toogleCategories, toogleOff, fetchCategoriesApi,} from '../actions/mercadoActions';
 
-function Header({cartList, toggleSearchBar, toogleCategories, tggleOff}) {
+function Header({cartList, toggleSearchBar, toogleCategories, tggleOff, fetchMercado}) {
+  
+  useEffect(() => {
+    fetchMercado();
+  });
+
   return (
     <div className="header">
       <div onClick={tggleOff}>
@@ -36,7 +41,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   toggleSearchBar: () => dispatch(toogleSearch()),
   toogleCategories: () => dispatch(toogleCategories()),
-  tggleOff: () => dispatch(toogleOff())
+  tggleOff: () => dispatch(toogleOff()),
+  fetchMercado: (state) => dispatch(fetchCategoriesApi(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

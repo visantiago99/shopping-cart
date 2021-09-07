@@ -1,18 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {fetchCategoriesApi, fetchProductInput, fetchProductsCategory, fetchRngInput} from '../actions/mercadoActions';
+import {fetchProductInput, fetchProductsCategory, fetchRngInput} from '../actions/mercadoActions';
 
-function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts}) {
+function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts, rngProducts}) {
   const [inputSearch, setInput] = useState({ searchInput: '' })
-
+  const rngNumb = Number((Math.round(Math.random() * 100)));
+  console.log(rngNumb)
   useEffect(() => {
-    fetchMercado();
-  });
-
-  // useEffect(() => {
-  //   fetchRngProducts();
-  // }, [Home])
+    fetchRngProducts(rngNumb);
+  }, [fetchRngProducts])
   
   return (
     <div className="home-container">
@@ -35,6 +32,15 @@ function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory, to
        </Link>
       })}
       </div>
+      <div>
+        {rngProducts && rngProducts.results.map((p, i) => (
+          <div key={i} className="p-card p-home">
+            <p>{p.title}</p>
+            <img src={p.thumbnail} alt={p.title} />
+            <p>{`R$ ${p.price}`}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -43,13 +49,13 @@ const mapStateToProps = (state) => ({
   categoriesMap: state.mercadoReducer.categories,
   toggleSearchBar: state.mercadoReducer.toggle,
   toggleCategories: state.mercadoReducer.tggCategories,
+  rngProducts: state.mercadoReducer.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchMercado: (state) => dispatch(fetchCategoriesApi(state)),
   fetchProductbCat: (state) => dispatch(fetchProductInput(state)),
   fetchPcategory: (state) => dispatch(fetchProductsCategory(state)),
-  fetchRngProducts: () => dispatch(fetchRngInput()),
+  fetchRngProducts: (state) => dispatch(fetchRngInput(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home); 

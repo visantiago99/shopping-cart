@@ -46,8 +46,8 @@ export const requestRng = (payload) => ({
     payload,
   });
   
-export const fetchRngInput = () => (dispatch) => {
-    return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${(Math.round(Math.random() * 100))}`)
+export const fetchRngInput = (numb) => (dispatch) => {
+    return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${numb}`)
     .then((result) => result.json())
     .then((resJson) => dispatch(requestScssInput(resJson)))
     

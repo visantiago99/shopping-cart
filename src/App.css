@@ -95,6 +95,10 @@ button {
   border-radius: 10%;
 }
 
+.p-home img {
+  width: 120px;
+}
+
 .p-detail-container {
   display: flex;
   flex-wrap: wrap;

@@ -23,7 +23,7 @@ function CartList({cartStore, removeFromCart}) {
         </div>
       })}
       <br />
-      {`Total value: R$ ${totalValue}`}
+      {`Total value: R$ ${Math.round(totalValue, 2)}`}
       <Link to="/"><button type="button">Keep searching <IoSearchSharp /></button></Link>
       <button type="button">Proceed to payment <IoWalletOutline /></button>
     </div>
