@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {fetchProductInput, fetchProductsCategory, fetchRngInput} from '../actions/mercadoActions';
+import {fetchProductInput, fetchProductsCategory, fetchRngInput, addToCart} from '../actions/mercadoActions';
 
-function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts, rngProducts}) {
+function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts, rngProducts, addToCart}) {
   const [inputSearch, setInput] = useState({ searchInput: '' })
   const rngNumb = Number((Math.round(Math.random() * 100)));
   useEffect(() => {
     fetchRngProducts(rngNumb);
   }, [fetchRngProducts])
 
-  //test
-  
   return (
     <div className="home-container">
       <div className={toggleSearchBar ? 'searchbar-active' : 'searchbar'}>
@@ -39,6 +37,7 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
             <p>{p.title}</p>
             <img src={p.thumbnail} alt={p.title} />
             <p>{`R$ ${p.price}`}</p>
+            <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
           </div>
         ))}
       </div>
@@ -57,6 +56,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchProductbCat: (state) => dispatch(fetchProductInput(state)),
   fetchPcategory: (state) => dispatch(fetchProductsCategory(state)),
   fetchRngProducts: (state) => dispatch(fetchRngInput(state)),
+  addToCart: (state) => dispatch(addToCart(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home); 
