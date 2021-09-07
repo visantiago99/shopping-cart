@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {fetchCategoriesApi, fetchProductInput, fetchProductsCategory} from '../actions/mercadoActions';
+import {fetchCategoriesApi, fetchProductInput, fetchProductsCategory, fetchRngInput} from '../actions/mercadoActions';
 
-function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories}) {
+function Home({fetchMercado, categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts}) {
   const [inputSearch, setInput] = useState({ searchInput: '' })
 
   useEffect(() => {
     fetchMercado();
   });
+
+  // useEffect(() => {
+  //   fetchRngProducts();
+  // }, [Home])
   
   return (
     <div className="home-container">
@@ -45,6 +49,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchMercado: (state) => dispatch(fetchCategoriesApi(state)),
   fetchProductbCat: (state) => dispatch(fetchProductInput(state)),
   fetchPcategory: (state) => dispatch(fetchProductsCategory(state)),
+  fetchRngProducts: () => dispatch(fetchRngInput()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home); 

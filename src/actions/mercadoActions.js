@@ -41,6 +41,18 @@ export const fetchProductsCategory = (id) => (dispatch) => fetch(`https://api.me
   .then((result) => result.json())
   .then((resJson) => dispatch(requestPcategory(resJson)))
 
+export const requestRng = (payload) => ({
+    type: 'REQUEST_RNG',
+    payload,
+  });
+  
+export const fetchRngInput = () => (dispatch) => {
+    return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${(Math.round(Math.random() * 100))}`)
+    .then((result) => result.json())
+    .then((resJson) => dispatch(requestScssInput(resJson)))
+    
+  }
+
 export const addToCart = (payload) => ({
   type: 'ADD_CART',
   payload,
