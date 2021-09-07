@@ -45,6 +45,11 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
   )
 }
 
+window.onload = () => {
+  window.scrollTo(50, 100)
+}
+  
+
 const mapStateToProps = (state) => ({
   categoriesMap: state.mercadoReducer.categories,
   toggleSearchBar: state.mercadoReducer.toggle,
