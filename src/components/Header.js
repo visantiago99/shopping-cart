@@ -16,12 +16,18 @@ function Header({cartList, toggleSearchBar, toogleCategories, tggleOff, fetchMer
       <div onClick={tggleOff}>
       <Link to="/"><GrHome /></Link>
       </div>
-      <div onClick={toogleCategories}>
+      <div onClick={() => {
+        window.scrollTo(0, 0)
+        toogleCategories()
+      }}>
         <Link to="/">
         <AiOutlineUnorderedList />
         </Link>
       </div>
-      <div onClick={toggleSearchBar}>
+      <div onClick={() => {
+        window.scrollTo(0, 0)
+        toggleSearchBar()
+      }}>
       <Link to="/">
         <AiOutlineSearch />
       </Link>
