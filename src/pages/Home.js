@@ -9,6 +9,8 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
   useEffect(() => {
     fetchRngProducts(rngNumb);
   }, [fetchRngProducts])
+
+  //test
   
   return (
     <div className="home-container">
