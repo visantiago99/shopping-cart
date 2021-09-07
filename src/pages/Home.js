@@ -6,7 +6,6 @@ import {fetchProductInput, fetchProductsCategory, fetchRngInput} from '../action
 function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar, toggleCategories, fetchRngProducts, rngProducts}) {
   const [inputSearch, setInput] = useState({ searchInput: '' })
   const rngNumb = Number((Math.round(Math.random() * 100)));
-  console.log(rngNumb)
   useEffect(() => {
     fetchRngProducts(rngNumb);
   }, [fetchRngProducts])
@@ -49,7 +48,7 @@ const mapStateToProps = (state) => ({
   categoriesMap: state.mercadoReducer.categories,
   toggleSearchBar: state.mercadoReducer.toggle,
   toggleCategories: state.mercadoReducer.tggCategories,
-  rngProducts: state.mercadoReducer.products,
+  rngProducts: state.mercadoReducer.randomProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({

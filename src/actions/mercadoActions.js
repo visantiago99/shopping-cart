@@ -49,8 +49,7 @@ export const requestRng = (payload) => ({
 export const fetchRngInput = (numb) => (dispatch) => {
     return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${numb}`)
     .then((result) => result.json())
-    .then((resJson) => dispatch(requestScssInput(resJson)))
-    
+    .then((resJson) => dispatch(requestRng(resJson)))
   }
 
 export const addToCart = (payload) => ({
