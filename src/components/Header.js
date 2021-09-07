@@ -12,10 +12,14 @@ function Header({cartList, toggleSearchBar, toogleCategories}) {
       <Link to="/"><GrHome /></Link>
       </div>
       <div onClick={toggleSearchBar}>
+      <Link to="/">
         <AiOutlineSearch />
+      </Link>
       </div>
       <div onClick={toogleCategories}>
+        <Link to="/">
         categories
+        </Link>
       </div>
       <div>
       <Link to="/cart"><AiOutlineShoppingCart /></Link>
