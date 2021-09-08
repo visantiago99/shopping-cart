@@ -38,8 +38,8 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
             <p>{p.title}</p>
             <img src={p.thumbnail} alt={p.title} />
             <p>{`R$ ${p.price}`}</p>
-            <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
             </Link>
+            <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
           </div>
         ))}
       </div>

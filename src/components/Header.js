@@ -9,7 +9,7 @@ function Header({cartList, toggleSearchBar, toogleCategories, tggleOff, fetchMer
   
   useEffect(() => {
     fetchMercado();
-  });
+  }, []);
 
   return (
     <div className="header">

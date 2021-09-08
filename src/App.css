@@ -129,7 +129,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 40px;
 }
 
@@ -143,4 +143,10 @@ button {
 
 .cart-item-card img {
   max-width: 250px;
+}
+
+@media screen and (min-width: 600px) {
+  .cart-item-card {
+    margin-left: 42%;
+  }
 }

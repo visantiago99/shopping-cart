@@ -41,6 +41,11 @@ export const fetchProductsCategory = (id) => (dispatch) => fetch(`https://api.me
   .then((result) => result.json())
   .then((resJson) => dispatch(requestPcategory(resJson)))
 
+// export const requestRng = (payload) => ({
+//     type: 'REQUEST_RNG',
+//     payload,
+//   });
+  
 export const fetchRngInput = (numb) => (dispatch) => {
     return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${numb}`)
     .then((result) => result.json())

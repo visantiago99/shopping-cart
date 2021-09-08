@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+  // randomProducts: '',
   categories: '',
   products: '',
   cartList: [],
@@ -8,6 +9,11 @@ const INITIAL_STATE = {
 
 export default function mercadoReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    // case 'REQUEST_RNG':
+    //   return {
+    //     ...state,
+    //     randomProducts: action.payload,
+    //   }
     case 'REQUEST_SUCESS':
       return {
         ...state,

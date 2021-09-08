@@ -18,8 +18,8 @@ function CartList({cartStore, removeFromCart}) {
               <img src={p.thumbnail} alt={p.title} />
               <p>{p.title}</p>
               <p>{`R$ ${p.price}`}</p>
-              <button type="button" onClick={() => removeFromCart(p.id)}><IoTrash /></button>
               </Link>
+              <button type="button" onClick={() => removeFromCart(p.id)}><IoTrash /></button>
             </div>
           }</li>
         </div>
