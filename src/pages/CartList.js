@@ -14,10 +14,12 @@ function CartList({cartStore, removeFromCart}) {
         return <div key={i} className="cart-item-card">
           <li>{
             <div>
+              <Link to={`/productDetails/${p.id}`}>
               <img src={p.thumbnail} alt={p.title} />
               <p>{p.title}</p>
               <p>{`R$ ${p.price}`}</p>
               <button type="button" onClick={() => removeFromCart(p.id)}><IoTrash /></button>
+              </Link>
             </div>
           }</li>
         </div>

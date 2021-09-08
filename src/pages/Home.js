@@ -34,10 +34,12 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
       <div className="home-rng-card">
         {rngProducts && rngProducts.results.map((p, i) => (
           <div key={i} className="p-card p-home">
+            <Link to={`/productDetails/${p.id}`}>
             <p>{p.title}</p>
             <img src={p.thumbnail} alt={p.title} />
             <p>{`R$ ${p.price}`}</p>
             <button type="button" onClick={() => addToCart(p)}>Adicionar ao carrinho</button>
+            </Link>
           </div>
         ))}
       </div>
@@ -49,7 +51,7 @@ const mapStateToProps = (state) => ({
   categoriesMap: state.mercadoReducer.categories,
   toggleSearchBar: state.mercadoReducer.toggle,
   toggleCategories: state.mercadoReducer.tggCategories,
-  rngProducts: state.mercadoReducer.randomProducts,
+  rngProducts: state.mercadoReducer.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({
