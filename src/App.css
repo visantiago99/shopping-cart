@@ -81,11 +81,9 @@ button {
 
 .p-list-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 40px;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .p-card {
@@ -94,6 +92,11 @@ button {
   margin-bottom: 20px;
   border-radius: 10%;
   margin: 1%;
+}
+
+.p-card img {
+  width: 120px;
+  height: 120px;
 }
 
 .home-rng-card {
@@ -112,8 +115,13 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
+  margin-top: 50px;
+}
+
+.p-detail-container img {
+  max-width: 280px;
+  max-height: 280px;
   margin: 0 auto;
-  padding: 40px;
 }
 
 .cart-list-contianer {

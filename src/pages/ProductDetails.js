@@ -12,7 +12,7 @@ function ProductDetails({products, addToCart}) {
     <div className="p-detail-container">
       <Link to="/productsList"><IoArrowBackCircleOutline /></Link>
       <p>{productFiltered.title}</p>
-      <img src={productFiltered.thumbnail} alt="p img" width="300px" />
+      <img src={productFiltered.thumbnail} alt="p img"/>
       <p>{`R$ ${productFiltered.price}`}</p>
       <p>{`Avaiabla quantity: ${productFiltered.available_quantity}`}</p>
       <button type="button" onClick={() => addToCart(productFiltered)}>Adicionar ao carrinho</button>
