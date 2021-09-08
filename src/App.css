@@ -27,8 +27,8 @@ button {
   background-color: rgb(255, 241, 89);
   border: 2px solid #1a1a1a;
   border-radius: 5px;
-  max-width: 1200px;
-  width: 99%;
+  max-width: 1900px;
+  width: 99.8%;
   top: 0;
   margin-bottom: 30px;
   position: fixed;
@@ -90,9 +90,16 @@ button {
 
 .p-card {
   border: 2px solid #3a3a3a;
-  max-width: 300px;
+  width: 300px;
   margin-bottom: 20px;
   border-radius: 10%;
+  margin: 1%;
+}
+
+.home-rng-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .p-home img {

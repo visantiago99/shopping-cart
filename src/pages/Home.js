@@ -31,7 +31,7 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
        </Link>
       })}
       </div>
-      <div>
+      <div className="home-rng-card">
         {rngProducts && rngProducts.results.map((p, i) => (
           <div key={i} className="p-card p-home">
             <p>{p.title}</p>
