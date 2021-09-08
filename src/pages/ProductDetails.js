@@ -4,9 +4,9 @@ import { useParams, useHistory } from 'react-router-dom';
 import {addToCart} from '../actions/mercadoActions';
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-function ProductDetails({products, addToCart, randomProducts}) {
+function ProductDetails({products, addToCart, randomProducts, cartList}) {
   const {id} = useParams();
-  const productFiltered = (products && products.results.find((p) => p.id === id)) || (randomProducts && randomProducts.results.find((p) => p.id === id));
+  const productFiltered = (products && products.results.find((p) => p.id === id)) || (randomProducts && randomProducts.results.find((p) => p.id === id)) || (cartList && cartList.results.find((p) => p.id === id));
   const history = useHistory();
   return (
     <div className="p-detail-container">
@@ -23,6 +23,7 @@ function ProductDetails({products, addToCart, randomProducts}) {
 const mapStateToProps = (state) => ({
   products: state.mercadoReducer.products,
   randomProducts: state.mercadoReducer.randomProducts,
+  cartList: state.mercadoReducer.cartList,
 });
 
 const mapDispatchToProps = (dispatch) => ({
