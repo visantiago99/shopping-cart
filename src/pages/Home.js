@@ -51,7 +51,7 @@ const mapStateToProps = (state) => ({
   categoriesMap: state.mercadoReducer.categories,
   toggleSearchBar: state.mercadoReducer.toggle,
   toggleCategories: state.mercadoReducer.tggCategories,
-  rngProducts: state.mercadoReducer.products,
+  rngProducts: state.mercadoReducer.randomProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({

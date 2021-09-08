@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import {addToCart} from '../actions/mercadoActions';
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-function ProductDetails({products, addToCart}) {
+function ProductDetails({products, addToCart, randomProducts}) {
   const {id} = useParams();
-  const productFiltered = products && products.results.find((p) => p.id === id)
-  
+  const productFiltered = products && products || randomProducts && randomProducts.results.find((p) => p.id === id)
+  const history = useHistory();
   return (
     <div className="p-detail-container">
-      <Link to="/productsList"><IoArrowBackCircleOutline /></Link>
+      <button type="button" onClick={() => history.goBack()}><IoArrowBackCircleOutline /></button>
       <p>{productFiltered.title}</p>
       <img src={productFiltered.thumbnail} alt="p img"/>
       <p>{`R$ ${productFiltered.price}`}</p>
@@ -21,7 +21,8 @@ function ProductDetails({products, addToCart}) {
 }
 
 const mapStateToProps = (state) => ({
-  products: state.mercadoReducer.products
+  products: state.mercadoReducer.products,
+  randomProducts: state.mercadoReducer.randomProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({

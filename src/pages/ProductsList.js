@@ -1,13 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import {addToCart} from '../actions/mercadoActions';
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 function ProductsList({productsInput, addToCart}) {
+  const history = useHistory();
   return (
     <div className="p-list-container">
-      <Link to="/"><IoArrowBackCircleOutline /></Link>
+      <button type="button" onClick={() => history.goBack()}><IoArrowBackCircleOutline /></button>
       {productsInput && productsInput.results.map((p, i) => (
         <div key={i} className="p-card">
           <Link to={`/productDetails/${p.id}`}>
