@@ -6,7 +6,7 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 function ProductDetails({products, addToCart, randomProducts}) {
   const {id} = useParams();
-  const productFiltered = products && products || randomProducts && randomProducts.results.find((p) => p.id === id)
+  const productFiltered = (products && products.results.find((p) => p.id === id)) || (randomProducts && randomProducts.results.find((p) => p.id === id));
   const history = useHistory();
   return (
     <div className="p-detail-container">
