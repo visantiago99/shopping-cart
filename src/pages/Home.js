@@ -10,6 +10,8 @@ function Home({categoriesMap, fetchProductbCat, fetchPcategory, toggleSearchBar,
     fetchRngProducts(rngNumb);
   }, [fetchRngProducts])
 
+  console.log('xamps')
+
   return (
     <div className="home-container">
       <div className={toggleSearchBar ? 'searchbar-active' : 'searchbar'}>

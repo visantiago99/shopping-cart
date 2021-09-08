@@ -35,7 +35,7 @@ function Header({cartList, toggleSearchBar, toogleCategories, tggleOff, fetchMer
         <AiOutlineSearch />
       </Link>
       </div>
-      <div onClick={window.scrollTo(0, 0)}>
+      <div /*onClick={window.scrollTo(0, 0)}*/>
       <Link to="/cart"><AiOutlineShoppingCart /></Link>
       <p>{cartList.length}</p>
       </div>
@@ -54,4 +54,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchMercado: (state) => dispatch(fetchCategoriesApi(state)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

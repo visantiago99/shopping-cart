@@ -32,6 +32,10 @@ function CartList({cartStore, removeFromCart}) {
   )
 }
 
+window.onload = () => {
+  window.scrollTo(0, 0)
+}
+
 const mapStateToProps = (state) => ({
   cartStore: state.mercadoReducer.cartList,
 });
